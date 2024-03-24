@@ -1,7 +1,9 @@
+ì´ ì½”ë“œëŠ” ìˆ˜ì •ì´ í•„ìš”í•´ìš”
+ì½”ë“œë¥¼ ìˆ˜ì •í–ˆì–´ìš”
 #include <iostream>
 #include <string>
 using namespace std;
-
+ì´ ë¶€ë¶„ì´ ì´ìƒí•´ì—¬
 class Vehicle {
 protected:
 	string Serial_number;
@@ -22,10 +24,10 @@ public:
 	Gasoline(string serial, string engine, int oil) : Vehicle(serial, engine), oil_gauge(oil) {}
 
 	void display_info() override {
-		cout << "Â÷·® Å¸ÀÔ: Gasoline" << endl;
-		cout << "½Ã¸®¾ó ¹øÈ£: " << Serial_number << endl;
-		cout << "¿£Áø Å¸ÀÔ: " << engine_type << endl;
-		cout << "±â¸§ °ÔÀÌÁö: " << oil_gauge << endl;
+		cout << "ì°¨ëŸ‰ íƒ€ì…: Gasoline" << endl;
+		cout << "ì‹œë¦¬ì–¼ ë²ˆí˜¸: " << Serial_number << endl;
+		cout << "ì—”ì§„ íƒ€ì…: " << engine_type << endl;
+		cout << "ê¸°ë¦„ ê²Œì´ì§€: " << oil_gauge << endl;
 	}
 
 };
@@ -38,10 +40,10 @@ public:
 	Electric(string serial, string engine, int charge) : Vehicle(serial, engine), charged_gauge(charge) {}
 
 	void display_info() override {
-		cout << "Â÷·® Å¸ÀÔ: Electric" << endl;
-		cout << "½Ã¸®¾ó ¹øÈ£: " << Serial_number << endl;
-		cout << "¿£Áø Å¸ÀÔ: " << engine_type << endl;
-		cout << "ÃæÀü °ÔÀÌÁö: " << charged_gauge << endl;
+		cout << "ì°¨ëŸ‰ íƒ€ì…: Electric" << endl;
+		cout << "ì‹œë¦¬ì–¼ ë²ˆí˜¸: " << Serial_number << endl;
+		cout << "ì—”ì§„ íƒ€ì…: " << engine_type << endl;
+		cout << "ì¶©ì „ ê²Œì´ì§€: " << charged_gauge << endl;
 	}
 
 };
@@ -52,18 +54,18 @@ public:
         : Gasoline(serial, engine, oil), Electric(serial, engine, charge), Vehicle(serial, engine) {}
 
     void display_info() override {
-        cout << "Â÷·® Å¸ÀÔ: Hybrid" << endl;
-        cout << "½Ã¸®¾ó ¹øÈ£: " << Serial_number << endl;
-        cout << "¿£Áø Å¸ÀÔ: " << engine_type << endl;
-        cout << "±â¸§ °ÔÀÌÁö: " << Gasoline::oil_gauge << endl;
-        cout << "ÃæÀü °ÔÀÌÁö: " << Electric::charged_gauge << endl;
+        cout << "ì°¨ëŸ‰ íƒ€ì…: Hybrid" << endl;
+        cout << "ì‹œë¦¬ì–¼ ë²ˆí˜¸: " << Serial_number << endl;
+        cout << "ì—”ì§„ íƒ€ì…: " << engine_type << endl;
+        cout << "ê¸°ë¦„ ê²Œì´ì§€: " << Gasoline::oil_gauge << endl;
+        cout << "ì¶©ì „ ê²Œì´ì§€: " << Electric::charged_gauge << endl;
     }
 };
 
 int main() {
-	Vehicle* v1 = new Gasoline("G123", "°¡¼Ö¸° ¿£Áø", 50);
-	Vehicle* v2 = new Electric("E456", "Àü±â ¸ğÅÍ", 80);
-	Vehicle* v3 = new Hybrid("H789", "ÇÏÀÌºê¸®µå", 50, 80);
+	Vehicle* v1 = new Gasoline("G123", "ê°€ì†”ë¦° ì—”ì§„", 50);
+	Vehicle* v2 = new Electric("E456", "ì „ê¸° ëª¨í„°", 80);
+	Vehicle* v3 = new Hybrid("H789", "í•˜ì´ë¸Œë¦¬ë“œ", 50, 80);
 
 	v1->display_info();
 	v2->display_info();
@@ -71,20 +73,20 @@ int main() {
 
 	Hybrid* newHybrid1 = dynamic_cast<Hybrid*>(v1);
 	if (newHybrid1) {
-		cout << "ÇÏÇâ Çüº¯È¯ ¼º°ø" << endl;
+		cout << "í•˜í–¥ í˜•ë³€í™˜ ì„±ê³µ" << endl;
 		newHybrid1->display_info();
 	}
 	else {
-		std::cout << "ÇÏÇâ Çüº¯È¯ ½ÇÆĞ" << endl;
+		std::cout << "í•˜í–¥ í˜•ë³€í™˜ ì‹¤íŒ¨" << endl;
 	}
 
 	Hybrid* newHybrid = dynamic_cast<Hybrid*>(v3);
 	if (newHybrid) {
-		cout << "ÇÏÇâ Çüº¯È¯ ¼º°ø" << endl;
+		cout << "í•˜í–¥ í˜•ë³€í™˜ ì„±ê³µ" << endl;
 		newHybrid->display_info();
 	}
 	else {
-		std::cout << "ÇÏÇâ Çüº¯È¯ ½ÇÆĞ" << endl;
+		std::cout << "í•˜í–¥ í˜•ë³€í™˜ ì‹¤íŒ¨" << endl;
 	}
 
 	delete v1;
