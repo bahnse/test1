@@ -1,7 +1,9 @@
+이 코드는 수정이 필요해요
+코드를 수정했어요
 #include <iostream>
 #include <string>
 using namespace std;
-
+이 부분이 이상해여
 class Vehicle {
 protected:
 	string Serial_number;
@@ -19,9 +21,12 @@ protected:
 	int oil_gauge;
 
 public:
-	Gasoline(string serial, string engine, int oil) : Vehicle(serial, engine), oil_gauge(oil) {}
-
+	Gasoline(string serial, string engine, int oil) : Vehicle(serial, engine), oil_gauge(oil) {} 
+  main
+	void display_info() override {
+=======
 	void display_info() const override {
+  main
 		cout << "차량 타입: Gasoline" << endl;
 		cout << "시리얼 번호: " << Serial_number << endl;
 		cout << "엔진 타입: " << engine_type << endl;
@@ -37,7 +42,11 @@ protected:
 public:
 	Electric(string serial, string engine, int charge) : Vehicle(serial, engine), charged_gauge(charge) {}
 
+ main
+	void display_info() override {
+=======
 	void display_info() const override {
+ main
 		cout << "차량 타입: Electric" << endl;
 		cout << "시리얼 번호: " << Serial_number << endl;
 		cout << "엔진 타입: " << engine_type << endl;
@@ -51,7 +60,11 @@ public:
     Hybrid(string serial, string engine, int oil, int charge)
         : Gasoline(serial, engine, oil), Electric(serial, engine, charge), Vehicle(serial, engine) {}
 
+ main
+    void display_info() override {
+=======
     void display_info() const override {
+ main
         cout << "차량 타입: Hybrid" << endl;
         cout << "시리얼 번호: " << Serial_number << endl;
         cout << "엔진 타입: " << engine_type << endl;
