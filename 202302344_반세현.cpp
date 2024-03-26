@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 이 부분이 이상해여
+// 202301604 박승준 pull requests
 class Vehicle {
 protected:
 	string Serial_number;
