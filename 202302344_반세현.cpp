@@ -89,7 +89,7 @@ int main() {
 		newHybrid1->display_info();
 	}
 	else {
-		std::cout << "하향 형변환 실패" << endl;
+		cout << "하향 형변환 실패" << endl;
 	}
 
 	Hybrid* newHybrid = dynamic_cast<Hybrid*>(v3);
@@ -98,7 +98,7 @@ int main() {
 		newHybrid->display_info();
 	}
 	else {
-		std::cout << "하향 형변환 실패" << endl;
+		cout << "하향 형변환 실패" << endl;
 	}
 
 	delete v1;
